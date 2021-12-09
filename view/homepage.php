@@ -78,12 +78,14 @@
                 <p class="hari">Today</p>
                 <i class="fa fa-cloud-showers-heavy fa-6x"></i>
                 <?php
+                    if(isset($tmp)){
                             if($tmp[1] == 0){
                                 echo "No";
                             }
                             else if($tmp[1] == 1){
                                 echo "Yes";
                             }
+                        }
                 ?>
             </div>
        </div>
@@ -92,12 +94,14 @@
                 <p class="hari">Tomorrow</p>
                 <i class="fa fa-cloud-showers-heavy fa-6x"></i>
                 <?php
+                if(isset($tmp)){
                             if($tmp[4] == 0){
                                 echo "No";
                             }
                             else if($tmp[4] == 1){
                                 echo "Yes";
                             }
+                        }
                 ?>
             </div>
         </div>
