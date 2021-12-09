@@ -46,23 +46,59 @@
                 </div>
         </div>
     </div>
-   
+    <?php
+        if(isset($_GET["humidity9"]) && isset($_GET["humidity3"]) && isset($_GET["rainfall"]) && isset($_GET["sunshine"]) && isset($_GET["cloud"]) ){
+            $a=$_GET["humidity9"];
+            $b=$_GET["humidity3"];
+            $c=$_GET["rainfall"];
+            $d=$_GET["sunshine"];
+            $e=$_GET["cloud"];
+    
+            $tmp = exec("C:/xampp/htdocs/InformasiCuaca/predict/env/Scripts/python C:/xampp/htdocs/InformasiCuaca/predict/model.py 2>&1".$a." ".$b." ".$c." ".$d." ".$e);
+            //echo var_dump($tmp);
+            //echo $tmp[1];
+            //echo $tmp[4];
+
+            // if($tmp[4] == 0){
+            //     echo "No";
+            // }
+            // else{
+            //     echo "Yes";
+            // }
+            
+        }
+    ?>
 </div>
-<div class="lala">
+<!-- <div class="lala">
     <p>test</p>
-</div>
+</div> -->
    <div id="result">
        <div class="hasil">
             <div class="w3-container">
                 <p class="hari">Today</p>
                 <i class="fa fa-cloud-showers-heavy fa-6x"></i>
+                <?php
+                            if($tmp[1] == 0){
+                                echo "No";
+                            }
+                            else if($tmp[1] == 1){
+                                echo "Yes";
+                            }
+                ?>
             </div>
        </div>
        <div class="hasil">
             <div class="w3-container">
                 <p class="hari">Tomorrow</p>
                 <i class="fa fa-cloud-showers-heavy fa-6x"></i>
-
+                <?php
+                            if($tmp[4] == 0){
+                                echo "No";
+                            }
+                            else if($tmp[4] == 1){
+                                echo "Yes";
+                            }
+                ?>
             </div>
         </div>
     </div>
