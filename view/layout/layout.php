@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 		<link rel="stylesheet" href="css/layout.css">
 		<link rel="stylesheet" href="css/homepage.css">
+		<link rel="stylesheet" href="css/informasi.css">
 		
 		
 </head>
