@@ -53,8 +53,9 @@
             $c=$_GET["rainfall"];
             $d=$_GET["sunshine"];
             $e=$_GET["cloud"];
-    
+        
             $tmp = exec("C:/xampp/htdocs/InformasiCuaca/predict/env/Scripts/python C:/xampp/htdocs/InformasiCuaca/predict/model.py 2>&1".$a." ".$b." ".$c." ".$d." ".$e);
+            //echo var_dump($tmp);
             //echo var_dump($tmp);
             //echo $tmp[1];
             //echo $tmp[4];
@@ -72,20 +73,20 @@
 <!-- <div class="lala">
     <p>test</p>
 </div> -->
-   <div id="result">
+    <div id="result">
        <div class="hasil">
             <div class="w3-container">
-                <p class="hari">Today</p>
+               <!-- <p class="hari">Today</p> -->
                 <i class="fa fa-cloud-showers-heavy fa-6x"></i>
                 <?php
                     if(isset($tmp)){
                             if($tmp[1] == 0){
                                 // echo "No";
-                                echo "<img src=\"asset/sun.png\" style=\"width: 100px\">";
+                                echo "<img src=\"asset/today_cerah.jpeg\" style=\"width: 75%\">";
                             }
                             else if($tmp[1] == 1){
                                 // echo "Yes";
-                                echo "<img src=\"asset/rain.png\" style=\"width: 100px\">";
+                                echo "<img src=\"asset/today_hujan.jpeg\" style=\"width: 75%\">";
                             }
                         }
                 ?>
@@ -93,17 +94,17 @@
        </div>
        <div class="hasil">
             <div class="w3-container">
-                <p class="hari">Tomorrow</p>
+                <!-- <p class="hari">Tomorrow</p> -->
                 <i class="fa fa-cloud-showers-heavy fa-6x"></i>
                 <?php
                 if(isset($tmp)){
                             if($tmp[4] == 0){
                                 //echo "No";
-                                echo "<img src=\"asset/sun.png\" style=\"width: 100px\">";
+                                echo "<img src=\"asset/tomorrow_cerah.jpeg\" style=\"width: 75%\">";
                             }
                             else if($tmp[4] == 1){
                                 //echo "Yes";
-                                echo "<img src=\"asset/rain.png\" style=\"width: 100px\">";
+                                echo "<img src=\"asset/tomorrow_hujan.jpeg\" style=\"width: 75%\">";
                             }
                         }
                 ?>
