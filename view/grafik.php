@@ -23,10 +23,14 @@ new Chart("myChart", {
       data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
       borderColor: "blue",
       fill: false
+    },{
+      data: [300,700,2000,1000,400,3000,2000,1000,200,100],
+      borderColor: "orange",
+      fill: false
     }]
   },
   options: {
-    legend: {display: false}
+    legend: {display: true}
   }
 }); 
 </script>
