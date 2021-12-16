@@ -80,10 +80,12 @@
                 <?php
                     if(isset($tmp)){
                             if($tmp[1] == 0){
-                                echo "No";
+                                // echo "No";
+                                echo "<img src=\"asset/sun.png\" style=\"width: 100px\">";
                             }
                             else if($tmp[1] == 1){
-                                echo "Yes";
+                                // echo "Yes";
+                                echo "<img src=\"asset/rain.png\" style=\"width: 100px\">";
                             }
                         }
                 ?>
@@ -96,10 +98,12 @@
                 <?php
                 if(isset($tmp)){
                             if($tmp[4] == 0){
-                                echo "No";
+                                //echo "No";
+                                echo "<img src=\"asset/sun.png\" style=\"width: 100px\">";
                             }
                             else if($tmp[4] == 1){
-                                echo "Yes";
+                                //echo "Yes";
+                                echo "<img src=\"asset/rain.png\" style=\"width: 100px\">";
                             }
                         }
                 ?>
