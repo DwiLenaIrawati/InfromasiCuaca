@@ -1,7 +1,9 @@
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
-
+<h2>
+    GRAFIK PERKEMBANGAN CUACA DARI HARI KE HARI
+</h2>
 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 
 <script>
