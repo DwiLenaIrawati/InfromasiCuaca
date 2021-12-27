@@ -13,14 +13,19 @@
 		<link rel="stylesheet" href="css/homepage.css">
 		<link rel="stylesheet" href="css/informasi.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Quicksand&display=swap" rel="stylesheet">
 		
 </head>
-<body style=" font-family: Poppins, sans-serif;">
+<body style=" font-family: 'Quicksand', sans-serif;">
 	<!-- Header -->
 	<div class="w3-container w3-flat-belize-hole ">
 			<div class="w3-container w3-cell">
 			
-				<h1 id="title" style=" font-family: 'Sofia', sans-serif;text-shadow: 3px 3px 3px #ababab;">Weather</h1>	
+				<h1 id="title" style=" font-family: 'Life Savers', cursive;text-shadow: 3px 3px 3px #ababab;">Weather</h1>	
 			</div>
 			<div class="w3-container w3-cell">
 				<nav >
