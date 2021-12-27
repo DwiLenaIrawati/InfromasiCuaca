@@ -21,7 +21,7 @@ class informasiController
 
     public function getKota()
     {
-        $query = "SELECT DISTINCT Location FROM `weatheraus_clean`";
+        $query = "SELECT DISTINCT Location FROM `weatheraus_clean` ORDER BY Location ASC";
         $select = $this->db->executeSelectQuery($query);
         return $select;
     }
@@ -47,21 +47,13 @@ class informasiController
             $fr =date('d/m/Y',strtotime( $_GET['fr_date']));
 
         }
-        
-        if (isset($_GET['to_date'])) {
-              
+        if (isset($_GET['to_date'])) {      
             $to = date('d/m/Y',strtotime( $_GET['to_date']));
-  
-            // if($to=='01/01/1970'){
-            //     $to= "30000101";
-            // }
         }
      
-        // echo $fr;
-        // echo $to;
-        // $query= "SELECT * FROM weatheraus_clean WHERE Location LIKE'%$kota%' AND Date >='$fr' AND Date <='$to'";
+     
         $query= "SELECT * FROM weatheraus_clean WHERE Location='$kota' AND Date >='$fr' AND Date <='$to'";
-     //   $query= "SELECT * FROM weatheraus_clean WHERE Location='$kota' AND Date BETWEEN $fr AND $to";
+
         $select = $this->db->executeSelectQuery($query);
         $result = [];
         foreach ($select as $value) {

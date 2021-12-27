@@ -1,5 +1,6 @@
 <div id="informasi">
 
+
 	<div class="w3-container" id="subtitle">
 		<form action="informasi" method="GET">
 			<a id="kota" style="font-size:x-large;text-decoration:none">Kota</a>
@@ -24,6 +25,14 @@
 	</div>
 	<div id="hasil" style="color: #629AAE;">
     <?php
+		$location=null;
+	     foreach ($param2 as $temp => $list) {
+			$location = $list -> getLocation();
+		}
+		if($location != null ){
+			?><h1> <?php echo $location;?></h1><?php 
+		}
+
             foreach ($param2 as $temp => $list) {
 				$maxtemp = $list -> getMaxtemp();
 				$mintemp = $list -> getMintemp();
@@ -42,7 +51,7 @@
 				$humidity3pm =$list -> getHumidity3pm();
              ?>
 		<div class="w3-container">
-		
+	
 			<div class="w3-row w3-container">
 				<div class="w3-row">
 					<div class="w3-col m2 w3-center">
@@ -75,7 +84,7 @@
 					</div>
 					<div class="w3-col m2 w3-center">
 						<div id="curah">
-							<a><i class="fas fa-cloud-rain fa-2x"></i></a>
+						<a><i class="fa fa-solid fa-cloud fa-2x"></i></a>
 							<p>Curah Hujan</p>
 							<p id="valueCurah"><?php echo $rainfall?></p>
 						</div>
@@ -120,7 +129,7 @@
 					</div>
 					<div class="w3-col m2 w3-center">
 						<div id="curah">
-							<a><i class="fas fa-cloud-rain fa-2x"></i></a>
+						<a><i class="fa fa-cloud fa-2x"></i></a>
 							<p>Curah Hujan</p>
 							<p id="valueCurah"><?php echo $rainfall?></p>
 						</div>
