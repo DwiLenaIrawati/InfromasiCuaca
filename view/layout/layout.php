@@ -12,15 +12,15 @@
 		<link rel="stylesheet" href="css/layout.css">
 		<link rel="stylesheet" href="css/homepage.css">
 		<link rel="stylesheet" href="css/informasi.css">
-		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 		
 </head>
-<body>
+<body style=" font-family: Poppins, sans-serif;">
 	<!-- Header -->
 	<div class="w3-container w3-flat-belize-hole ">
 			<div class="w3-container w3-cell">
-			<i class="fa fa-solid fa-cloud"></i>
-				<h1 id="title">Weather</h1>	
+			
+				<h1 id="title" style=" font-family: 'Sofia', sans-serif;text-shadow: 3px 3px 3px #ababab;">Weather</h1>	
 			</div>
 			<div class="w3-container w3-cell">
 				<nav >
