@@ -1,22 +1,24 @@
 <head>
 <link rel="stylesheet" href="js/slideshow.js">
 </head>
+<div style=" background-color: #f1fffe;">
 <div class="carousel-container">	
 	<div class="images slides">
-		<img src="asset/1.png" style="width: 100%">
+		<img src="asset/6.png" style="width: 100%">
 	</div>
 			
 	<div class="images slides">
-		<img src="asset/2.png" style="width: 100%">
+		<img src="asset/7.png" style="width: 100%">
 	</div>
 </div>
 
-<div class="prediksi">
+
+<div class="prediksi" style="margin-top: 50px;">
     <div class="w3-container">
         <div class="w3-row-padding">
+            <h1 style=" font-family: 'Life Savers', cursive;">Prediction </h1>
             <form >
-            
-                <div class="w3-row-padding">
+                <div class="w3-row-padding" style="font-family: 'Quicksand', sans-serif;font-size:large;">
                     <div class="w3-third">
                         <label>Humidity 9am</label>
                         <input class="w3-input w3-border" name ="humidity9" type="text" >
@@ -44,6 +46,10 @@
                         <button id="submit"class="w3-button w3-flat-belize-hole  w3-round" >Submit</button>
                     </div>
                 </div>
+                <!-- <img src="asset/todayRain.gif" style="width: 100%">
+                <img src="asset/tomorrowRain.gif" style="width: 100%">
+                <img src="asset/todaySunny.gif" style="width: 100%">
+                <img src="asset/TomorrowSunny.gif" style="width: 100%"> -->
         </div>
     </div>
     <?php
@@ -112,3 +118,6 @@
         </div>
     </div>
 </div>
+
+</div>
+

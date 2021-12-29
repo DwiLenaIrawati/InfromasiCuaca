@@ -1,4 +1,5 @@
-<div id="informasi">
+<div id="informasi" style="font-family: 'Quicksand', sans-serif;">
+
 
 
 	<div class="w3-container" id="subtitle">
@@ -30,7 +31,11 @@
 			$location = $list -> getLocation();
 		}
 		if($location != null ){
+<<<<<<< HEAD
 			?><h1> <?php echo $location;?></h1><?php 
+=======
+			?><h1 style="font-family: 'Quicksand', sans-serif;margin-left:50px;"> <b><?php echo $location;?></b></h1><?php 
+>>>>>>> 69776089b1cf238484c36fdb666ea6e045c4fa2f
 		}
 
             foreach ($param2 as $temp => $list) {
