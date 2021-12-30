@@ -28,17 +28,27 @@
 			if ($kota != null) {
 		?>
 
-			<h1 name="kota">
-				<?php echo $kota; ?>
-			</h1>
+			<h2 id="namKot" name="kota">
+				Nama Kota : <?php echo $kota; ?>
+			</h2>
 
-			<h1 name="fr">
-				<?php echo $fr; ?>
-			</h1>
+			<h2 id="rentangWaktu">Rentang Waktu : </h2>
 
-			<h1 name="to">
-				<?php echo $to; ?>
-			</h1>
+			<div id = "infoKanan" style="display:flex; flex-direction: row">
+				
+				<h2 id= "tgl1" name="fr">
+					<?php echo $fr; ?>
+				</h2>
+
+				<span id = "sd" style = "font-size:2rem;" >s.d</span>
+
+				<h2 id= "tgl2" name="to">
+					<?php echo $to; ?>
+				</h2>
+			</div>
+			
+			
+
 			<?php
 				session_start();
 				$_SESSION['kota'] = $kota;
@@ -64,7 +74,7 @@
 					$humidity3pm = $list->getHumidity3pm();
 			?>
 
-			<div class="w3-container">
+			<div class="w3-container" style = "margin-top: 3rem;">
 
 				<div class="w3-row w3-container">
 					<div class="w3-row">
