@@ -50,6 +50,7 @@
                     $value['RainTomorrow']
                 );
             }
+            
             return $result;
         }
 
