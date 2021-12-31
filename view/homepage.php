@@ -64,6 +64,7 @@
             }
         ?>
     </div>
+<<<<<<< HEAD
 
         <div id="result">
         <div class="hasil">
@@ -98,6 +99,53 @@
                                     //echo "Yes";
                                     echo "<img src=\"asset/TomorrowRain.gif\" style=\"width: 75%\">";
                                 }
+=======
+    <?php
+        if(isset($_GET["humidity9"]) && isset($_GET["humidity3"]) && isset($_GET["rainfall"]) && isset($_GET["sunshine"]) && isset($_GET["cloud"]) ){
+            $a=$_GET["humidity9"];
+            $b=$_GET["humidity3"];
+            $c=$_GET["rainfall"];
+            $d=$_GET["sunshine"];
+            $e=$_GET["cloud"];
+        
+            $tmp = exec("C:/xampp/htdocs/InformasiCuaca/predict/env/Scripts/python C:/xampp/htdocs/InformasiCuaca/predict/model.py 2>&1".$a." ".$b." ".$c." ".$d." ".$e);
+        }
+    ?>
+</div>
+
+    <div id="result">
+       <div class="hasil">
+            <div class="w3-container">
+               <!-- <p class="hari">Today</p> -->
+                <i class="fa fa-cloud-showers-heavy fa-6x"></i>
+                <?php
+                    if(isset($tmp)){
+                            if($tmp[1] == 0){
+                                // echo "No";
+                                echo "<img src=\"asset/TodaySunny.gif\" style=\"width: 75%\">";
+                            }
+                            else if($tmp[1] == 1){
+                                // echo "Yes";
+                                echo "<img src=\"asset/TodayRain.gif\" style=\"width: 75%\">";
+                            }
+                        }
+                ?>
+            </div>
+       </div>
+       <div class="hasil">
+            <div class="w3-container">
+                <!-- <p class="hari">Tomorrow</p> -->
+                <i class="fa fa-cloud-showers-heavy fa-6x"></i>
+                <?php
+                if(isset($tmp)){
+                            if($tmp[4] == 0){
+                                //echo "No";
+                                echo "<img src=\"asset/TomorrowSunny.gif\" style=\"width: 75%\">";
+                            }
+                            else if($tmp[4] == 1){
+                                //echo "Yes";
+                                echo "<img src=\"asset/TomorrowRain.gif\" style=\"width: 75%\">";
+>>>>>>> 489e3ab0e3dde08c0f55e98585b393d4c7c90ff0
                             }
                     ?>
                 </div>
