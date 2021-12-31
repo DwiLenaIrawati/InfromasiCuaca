@@ -29,11 +29,9 @@
 			</div>
 			<div class="w3-container w3-cell">
 				<nav >
-					<div id="nav" class="w3-bar w3-bar-item w3-flat-belize-hole">
+					<div id="nav" class="w3-bar w3-bar-item w3-flat-belize-hole" style="  margin: 16px 0px 0px 170px;">
 						<a class="link" href="homepage" style="text-decoration: none;">Prediksi Hujan</a>
-						<a class="link" href="informasi" style="text-decoration: none;">Informasi Cuaca</a>
-						<a class="link" href="grafik" style="text-decoration: none;">Grafik</a>
-						
+						<a class="link" href="informasi" style="text-decoration: none;">Informasi Cuaca</a>	
 					</div>
 				</nav>		
 			</div>

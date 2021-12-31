@@ -11,31 +11,13 @@ class informasiController
     }
     public function viewInformasi()
     {
-        $kota = $this->getKota();
-
-
-        $result = $this->searchKota();
-       // echo var_dump($result);
-        return View::createViewInformasi('informasi.php', $kota, $result, 'layout.php');
-    }
-
-    public function getKota()
-    {
-        $query = "SELECT DISTINCT Location FROM `weatheraus_clean`";
-        $select = $this->db->executeSelectQuery($query);
-        return $select;
-    }
-
-    public function searchKota()
-    {
-        $count=0;
-        if (isset($_GET['kota'])) {
-            $kota = $_GET['kota'];
-            $count=$count+1;
+         if (isset($_GET['kota'])) {
+            $city = $_GET['kota'];
+         
        
         }
         else{
-            $kota='';
+            $city='';
         
         }
      
@@ -45,23 +27,31 @@ class informasiController
      $to="";
         if (isset($_GET['fr_date'])) {
             $fr =date('d/m/Y',strtotime( $_GET['fr_date']));
-
+            $fr = $_GET['fr_date'];
         }
-        
-        if (isset($_GET['to_date'])) {
-              
+        if (isset($_GET['to_date'])) {      
             $to = date('d/m/Y',strtotime( $_GET['to_date']));
-  
-            // if($to=='01/01/1970'){
-            //     $to= "30000101";
-            // }
+            $to = $_GET['to_date'];
         }
      
-        // echo $fr;
-        // echo $to;
-        // $query= "SELECT * FROM weatheraus_clean WHERE Location LIKE'%$kota%' AND Date >='$fr' AND Date <='$to'";
+        $kota = $this->getKota();
+
+
+        $result = $this->searchKota($city,$fr,$to);
+        return View::createViewInformasi('informasi.php', $kota,$result, $city,$fr,$to, 'layout.php');
+    }
+
+    public function getKota()
+    {
+        $query = "SELECT DISTINCT Location FROM `weatheraus_clean` ORDER BY Location ASC";
+        $select = $this->db->executeSelectQuery($query);
+        return $select;
+    }
+
+    public function searchKota($kota,$fr,$to)
+    {
         $query= "SELECT * FROM weatheraus_clean WHERE Location='$kota' AND Date >='$fr' AND Date <='$to'";
-     //   $query= "SELECT * FROM weatheraus_clean WHERE Location='$kota' AND Date BETWEEN $fr AND $to";
+
         $select = $this->db->executeSelectQuery($query);
         $result = [];
         foreach ($select as $value) {

@@ -36,6 +36,26 @@ input {
     text-align: center;
 }
 
-h1{
-    
+
+#namKot{
+    margin-left: 3rem;
+}
+
+#rentangWaktu{
+    margin-left: 29rem;
+    margin-top: -2.7rem;
+}
+
+#infoKanan{
+    margin-left: 45rem;
+    margin-top: -3.7rem;
+}
+
+#sd{
+    margin-left: 1rem;
+    margin-top: 0.3rem;
+}
+
+#tgl2{
+    margin-left: 1rem;
 }
