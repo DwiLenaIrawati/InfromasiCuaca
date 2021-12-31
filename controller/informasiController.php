@@ -9,6 +9,14 @@ class informasiController
     {
         $this->db = new MySQLDB("localhost", "root", "", "weatheraus_clean");
     }
+    public function changeFormatDate($value){
+        //$text = substr($string, 0, $index).'eat '.substr($string, $index);
+        $year = substr($value, 0, 4);
+        $month = substr($value, 8, 10);
+        $day = $value[5].$value[6];
+        $date = $day."/".$month."/".$year;
+        return $date; 
+    }
     public function viewInformasi()
     {
          if (isset($_GET['kota'])) {
@@ -21,22 +29,25 @@ class informasiController
         
         }
      
-        
+        $fr="";
+        $to ="";
 
-     $fr="";
-     $to="";
+
+
         if (isset($_GET['fr_date'])) {
-            $fr =date('d/m/Y',strtotime( $_GET['fr_date']));
+            //$fr = $this->changeFormatDate($_GET['fr_date']);
+            //$fr =date('d/m/Y',strtotime( $_GET['fr_date']));
             $fr = $_GET['fr_date'];
         }
         if (isset($_GET['to_date'])) {      
-            $to = date('d/m/Y',strtotime( $_GET['to_date']));
+            //$to = $this->changeFormatDate($_GET['to_date']);
+            //$to = date('d/m/Y',strtotime( $_GET['to_date']));
             $to = $_GET['to_date'];
         }
      
         $kota = $this->getKota();
 
-
+        
         $result = $this->searchKota($city,$fr,$to);
         return View::createViewInformasi('informasi.php', $kota,$result, $city,$fr,$to, 'layout.php');
     }
@@ -47,7 +58,7 @@ class informasiController
         $select = $this->db->executeSelectQuery($query);
         return $select;
     }
-
+    
     public function searchKota($kota,$fr,$to)
     {
         $query= "SELECT * FROM weatheraus_clean WHERE Location='$kota' AND Date >='$fr' AND Date <='$to'";
@@ -81,7 +92,9 @@ class informasiController
                 $value['RainTomorrow']
             );
         }
+        //print_r($query);
         return $result;
+        
     //    echo var_dump($select);
     }
 }
